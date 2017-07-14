@@ -1,0 +1,9 @@
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.dll.config
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.dll
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.pdb
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.dll
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.xml
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.dll
+E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.pdb
