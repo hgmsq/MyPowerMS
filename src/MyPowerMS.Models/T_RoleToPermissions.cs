@@ -12,22 +12,10 @@ namespace MyPowerMS.Models
     using System;
     using System.Collections.Generic;
     
-    /// <summary>  
-    /// 角色权限关联表  
-    /// </summary>
     public partial class T_RoleToPermissions
     {
-        /// <summary>  
-    	/// 主键  
-    	/// </summary> 
         public string id { get; set; }
-        /// <summary>  
-    	/// 角色id  
-    	/// </summary> 
         public string RoleId { get; set; }
-        /// <summary>  
-    	/// 权限id  
-    	/// </summary> 
         public string Permissions { get; set; }
     }
 }

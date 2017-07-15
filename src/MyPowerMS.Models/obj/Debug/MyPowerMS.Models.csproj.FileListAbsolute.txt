@@ -7,3 +7,14 @@ E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.xml
 E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\bin\Debug\EntityFramework.SqlServer.xml
 E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.dll
 E:\hgm\MyPowerMS\MyPowerMS.Models\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.dll.config
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\MyPowerMS.Models.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\EntityFramework.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\EntityFramework.xml
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Models\obj\Debug\MyPowerMS.Models.pdb

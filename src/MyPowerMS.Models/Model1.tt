@@ -1,5 +1,4 @@
-﻿<#@ include file="GetSummery.ttinclude"#>  
-<#@ template language="C#" debug="false" hostspecific="true"#>
+﻿<#@ template language="C#" debug="false" hostspecific="true"#>
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@ 
  output extension=".cs"#><#
 
@@ -25,9 +24,6 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
     BeginNamespace(code);
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
-/// <summary>  
-/// <#= getTableSummery(code.Escape(entity)) #>  
-/// </summary>
 <#=codeStringGenerator.EntityClassOpening(entity)#>
 {
 <#
@@ -74,9 +70,6 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
         foreach (var edmProperty in simpleProperties)
         {
 #>
-    /// <summary>  
-	/// <#= getColumnSummery(code.Escape(entity),code.Escape(edmProperty)) #>  
-	/// </summary> 
     <#=codeStringGenerator.Property(edmProperty)#>
 <#
         }

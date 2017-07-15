@@ -12,30 +12,12 @@ namespace MyPowerMS.Models
     using System;
     using System.Collections.Generic;
     
-    /// <summary>  
-    /// 权限表  
-    /// </summary>
     public partial class T_Permissions
     {
-        /// <summary>  
-    	/// 主键  
-    	/// </summary> 
         public string id { get; set; }
-        /// <summary>  
-    	/// 权限名称  
-    	/// </summary> 
         public string Title { get; set; }
-        /// <summary>  
-    	/// 权限URL  
-    	/// </summary> 
         public string Url { get; set; }
-        /// <summary>  
-    	/// 0 不启用 1 启用  
-    	/// </summary> 
         public Nullable<int> Status { get; set; }
-        /// <summary>  
-    	/// 创建时间  
-    	/// </summary> 
         public Nullable<System.DateTime> CreateDate { get; set; }
     }
 }

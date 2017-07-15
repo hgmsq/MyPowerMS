@@ -12,34 +12,13 @@ namespace MyPowerMS.Models
     using System;
     using System.Collections.Generic;
     
-    /// <summary>  
-    /// 用户信息表  
-    /// </summary>
     public partial class T_UserInfo
     {
-        /// <summary>  
-    	/// 主键  
-    	/// </summary> 
         public string id { get; set; }
-        /// <summary>  
-    	/// 用户名  
-    	/// </summary> 
         public string UserName { get; set; }
-        /// <summary>  
-    	/// 真实姓名  
-    	/// </summary> 
         public string TrueName { get; set; }
-        /// <summary>  
-    	/// 密码  
-    	/// </summary> 
         public string PassWord { get; set; }
-        /// <summary>  
-    	/// 角色  
-    	/// </summary> 
         public string Role { get; set; }
-        /// <summary>  
-    	/// 创建日期  
-    	/// </summary> 
         public Nullable<System.DateTime> CreateDate { get; set; }
     }
 }

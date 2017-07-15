@@ -12,26 +12,11 @@ namespace MyPowerMS.Models
     using System;
     using System.Collections.Generic;
     
-    /// <summary>  
-    /// 用户角色关联表  
-    /// </summary>
     public partial class T_UserToRole
     {
-        /// <summary>  
-    	///   
-    	/// </summary> 
         public string id { get; set; }
-        /// <summary>  
-    	///   
-    	/// </summary> 
         public string UserId { get; set; }
-        /// <summary>  
-    	///   
-    	/// </summary> 
         public string RoleId { get; set; }
-        /// <summary>  
-    	/// 创建日期  
-    	/// </summary> 
         public Nullable<System.DateTime> CreateDate { get; set; }
     }
 }
