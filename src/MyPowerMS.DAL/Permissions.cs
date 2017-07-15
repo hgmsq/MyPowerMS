@@ -36,9 +36,9 @@ namespace MyPowerMS.DAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public int Add(T_Permissions model)
+        public void Add(T_Permissions model)
         {
-            return DapperBase.conn.Insert<T_Permissions>(model);
+            DapperBase.conn.Insert<T_Permissions>(model);
         }
         /// <summary>
         /// 删除实体

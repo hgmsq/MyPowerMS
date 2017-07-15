@@ -36,9 +36,9 @@ namespace MyPowerMS.DAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public int Add(T_UserToRole model)
+        public void Add(T_UserToRole model)
         {
-            return DapperBase.conn.Insert<T_UserToRole>(model);
+            DapperBase.conn.Insert<T_UserToRole>(model);
         }
         /// <summary>
         /// 删除实体

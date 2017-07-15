@@ -4,12 +4,12 @@ using MyPowerMS.Models;
 
 namespace MyPowerMS.BLL
 {
-    public interface IRolesInfoBLL
+    public interface IBaseBLL
     {
-        int Add(T_RoleInfo model);
-        bool Delete(string id);
-        IEnumerable<T_RoleInfo> GetAllList();
+        void Add<T>(T model);
+        bool Delete<T>(T t);
+        IEnumerable<T> GetAllList<T>(T t);
         T_RoleInfo GetById(string id);
-        bool Update(T_RoleInfo model);
+        bool Update<T>(T t);
     }
 }

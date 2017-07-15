@@ -12,7 +12,7 @@ using System.Data;
 
 namespace MyPowerMS.DAL
 {
-   public class RoleToPermissions : IRoleToPermissions
+   public class RoleToPermissions
     {
         /// <summary>
         /// 获取所有列表
@@ -36,9 +36,9 @@ namespace MyPowerMS.DAL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public int Add(T_RoleToPermissions model)
+        public void Add(T_RoleToPermissions model)
         {
-            return DapperBase.conn.Insert<T_RoleToPermissions>(model);
+            DapperBase.conn.Insert<T_RoleToPermissions>(model);
         }
         /// <summary>
         /// 删除实体

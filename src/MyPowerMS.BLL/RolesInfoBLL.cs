@@ -8,7 +8,7 @@ using MyPowerMS.Models;
 
 namespace MyPowerMS.BLL
 {
-   public class RolesInfoBLL : IRolesInfoBLL
+   public class RolesInfoBLL:IRolesInfoBLL
     {
         public readonly RolesInfo dal = new RolesInfo();
         /// <summary>
@@ -33,9 +33,9 @@ namespace MyPowerMS.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public int Add(T_RoleInfo model)
+        public void Add(T_RoleInfo model)
         {
-            return dal.Add(model);
+            dal.Add(model);
         }
         /// <summary>
         /// 删除实体
@@ -55,5 +55,6 @@ namespace MyPowerMS.BLL
         {
             return dal.Update(model);
         }
+
     }
 }

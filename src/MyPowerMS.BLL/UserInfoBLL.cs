@@ -33,9 +33,9 @@ namespace MyPowerMS.BLL
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public int Add(T_UserInfo model)
+        public void Add(T_UserInfo model)
         {
-            return dal.Add(model);
+            dal.Add(model);
         }
         /// <summary>
         /// 删除实体

@@ -5,7 +5,7 @@ namespace MyPowerMS.BLL
 {
     public interface IUserToRoleBLL
     {
-        int Add(T_UserToRole model);
+        void Add(T_UserToRole model);
         bool Delete(string id);
         IEnumerable<T_UserToRole> GetAllList();
         T_UserToRole GetById(string id);

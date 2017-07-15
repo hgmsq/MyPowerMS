@@ -41,12 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPermissionsBLL.cs" />
+    <Compile Include="IBaseBLL.cs" />
     <Compile Include="IRolesInfoBLL.cs" />
+    <Compile Include="IRoleToPermissionsBLL.cs" />
     <Compile Include="IUserInfoBLL.cs" />
     <Compile Include="IUserToRoleBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PermissionsBLL.cs" />
     <Compile Include="RolesInfoBLL.cs" />
+    <Compile Include="RoleToPermissionsBLL.cs" />
     <Compile Include="UserToRoleBLL.cs" />
     <Compile Include="UserInfoBLL.cs" />
   </ItemGroup>

@@ -51,7 +51,6 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DapperBase.cs" />
-    <Compile Include="IRoleToPermissions.cs" />
     <Compile Include="RoleToPermissions.cs" />
     <Compile Include="UserToRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

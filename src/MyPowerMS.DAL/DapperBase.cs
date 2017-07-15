@@ -14,7 +14,7 @@ namespace MyPowerMS.DAL
     /// </summary>
     public class DapperBase
     {
-        private static string sqlConnection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+        private static string sqlConnection = ConfigurationManager.ConnectionStrings["connStr"].ToString();
         public static IDbConnection conn = new SqlConnection(sqlConnection);
     }
 }

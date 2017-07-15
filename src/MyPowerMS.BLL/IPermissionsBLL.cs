@@ -5,7 +5,7 @@ namespace MyPowerMS.BLL
 {
     public interface IPermissionsBLL
     {
-        int Add(T_Permissions model);
+        void Add(T_Permissions model);
         bool Delete(string id);
         IEnumerable<T_Permissions> GetAllList();
         T_Permissions GetById(string id);
