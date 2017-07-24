@@ -783,6 +783,8 @@
     <Content Include="Content\js\plugins\webuploader\.DS_Store" />
     <Content Include="Content\js\plugins\webuploader\README.md" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\shared\_Layout.cshtml" />
+    <Content Include="Views\AdminIndex\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -793,7 +795,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\AdminIndex\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

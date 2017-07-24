@@ -24,13 +24,21 @@ namespace MyPowerMS.Controllers
         /// <returns>账户信息</returns>
         protected T_UserInfo GetCurrentAccount()
         {
-            if (Session["UserId"] != null)
+            try
             {
-                return userService.GetById(Session["UserId"].ToString());
+                if (Session["UserId"] != null)
+                {
+                    return userService.GetById(Session["UserId"].ToString());
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch
             {
-                return null;
+                return null
+                    ;
             }
         }
     }
