@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
     <Compile Include="IPermissionsBLL.cs" />
     <Compile Include="IBaseBLL.cs" />
     <Compile Include="IRolesInfoBLL.cs" />

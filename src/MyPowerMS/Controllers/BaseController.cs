@@ -12,6 +12,7 @@ namespace MyPowerMS.Controllers
     {
         #region 接口
         IUserInfoBLL userService = new UserInfoBLL();
+        BaseService baseservice = new BaseService();
         #endregion
         public static T_UserInfo currentUser = null;   
         public BaseController()
@@ -27,6 +28,21 @@ namespace MyPowerMS.Controllers
             if (Session["UserId"] != null)
             {
                 return userService.GetById(Session["UserId"].ToString());
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// 当前用户拥有权限
+        /// </summary>
+        /// <returns></returns>
+        protected List<T_Permissions> GetPermissions()
+        {
+            if (Session["UserId"] != null)
+            {
+                return baseservice.GetPermissions(Session["UserId"].ToString());
             }
             else
             {
