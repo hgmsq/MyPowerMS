@@ -14,7 +14,7 @@ namespace MyPowerMS.Controllers
         // GET: AdminIndex
         public ActionResult Index()
         {
-            string str = Session["UserName"].ToString();
+            //string str = Session["UserName"].ToString();
             return View();
         }
     }
