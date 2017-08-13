@@ -45,9 +45,9 @@ namespace MyPowerMS.DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool Delete(string id)
+        public bool Delete(T_UserInfo model)
         {
-            return DapperBase.conn.Delete<T_UserInfo>(id);
+            return DapperBase.conn.Delete<T_UserInfo>(model);
         }
         /// <summary>
         /// 更新实体

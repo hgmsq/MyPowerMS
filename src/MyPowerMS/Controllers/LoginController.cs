@@ -37,7 +37,7 @@ namespace MyPowerMS.Controllers
                 Session["UserId"] = model.id;
                 Session["UserName"] = model.UserName;
                 Session["password"] = model.PassWord;
-                return RedirectToAction("Index", "Default");               
+                return RedirectToAction("Index", "AdminIndex");               
             }
             else
             {

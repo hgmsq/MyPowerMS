@@ -1,0 +1,105 @@
+﻿@using MyPowerMS.Models
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>新增用户</title>
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+</head>
+<body>
+    <div class="panel admin-panel">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>新增用户</strong></div>
+        <div class="body-content">
+
+            @using (Html.BeginForm("Add", "UserInfo", FormMethod.Post, new { @class = "form-x" }))
+            {
+                <div class="form-group">
+                    <div class="label">
+                        <label>用户名：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="UserName" id="UserName" data-validate="required:请输入用户名" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>真实姓名：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="TrueName" id="TrueName" data-validate="required:请输入真实姓名" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>密码：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="Password" id="Password" data-validate="required:请输入密码" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>角色：</label>
+                    </div>
+                    <div class="field">
+                        <select name="Role" id="Role" style="width:200px;" class="input w50" data-validate="required:请选择角色">
+                            <option value="">请选择角色</option>
+                            @if (ViewBag.RoleList != null)
+                            {
+                                foreach (T_RoleInfo item in ViewBag.RoleList)
+                                {
+                                    <option value="@item.id">@item.RoleName</option>
+                                }                         
+                            }
+                        </select>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddUser()"> 提交</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function AddUser() {
+            $.ajax({
+                type: "POST",
+                url: "/UserInfo/Add",
+                data: {
+                    UserName: $("#UserName").val(),
+                    TrueName: $("#TrueName").val(),
+                    Role: $("#Role").val(),
+                    Password: $("#Password").val(),
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                        window.location.href = "/UserInfo/Index";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>

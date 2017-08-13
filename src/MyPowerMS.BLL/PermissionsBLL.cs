@@ -42,9 +42,9 @@ namespace MyPowerMS.BLL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool Delete(string id)
+        public bool Delete(T_Permissions model)
         {
-            return dal.Delete(id);
+            return dal.Delete(model);
         }
         /// <summary>
         /// 更新实体

@@ -9,7 +9,7 @@ using MyPowerMS.BLL;
 
 namespace MyPowerMS.Controllers
 {
-    public class AdminIndexController : BaseController
+    public class AdminIndexController : Controller
     {       
         // GET: AdminIndex
         public ActionResult Index()
