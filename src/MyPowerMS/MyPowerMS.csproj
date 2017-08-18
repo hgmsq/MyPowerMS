@@ -134,6 +134,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RoleinfoController.cs" />
     <Compile Include="Controllers\UserinfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,6 +152,9 @@
     <Content Include="Views\Userinfo\Index.cshtml" />
     <Content Include="Views\Userinfo\Add.cshtml" />
     <Content Include="Views\Userinfo\Edit.cshtml" />
+    <Content Include="Views\Roleinfo\Index.cshtml" />
+    <Content Include="Views\Roleinfo\Add.cshtml" />
+    <Content Include="Views\Roleinfo\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

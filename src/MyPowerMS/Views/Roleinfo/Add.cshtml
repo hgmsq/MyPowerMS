@@ -1,0 +1,77 @@
+﻿@using MyPowerMS.Models
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>新增角色</title>
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+</head>
+<body>
+    <div class="panel admin-panel">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>新增角色</strong></div>
+        <div class="body-content">
+
+            @using (Html.BeginForm("Add", "Roleinfo", FormMethod.Post, new { @class = "form-x" }))
+            {
+                <div class="form-group">
+                    <div class="label">
+                        <label>角色名称：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="RoleName" id="RoleName" data-validate="required:请输入用户名" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>角色描述：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="RoleDesc" id="RoleDesc" data-validate="required:请输入真实姓名" />
+                        <div class="tips"></div>
+                    </div>
+                </div>               
+
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddRole()"> 提交</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function AddRole() {
+          
+            $.ajax({
+                type: "POST",
+                url: "/RoleInfo/Add",
+                data: {
+                    RoleName: $("#RoleName").val(),
+                    RoleDesc: $("#RoleDesc").val()
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                        window.location.href = "/Roleinfo/Index";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>

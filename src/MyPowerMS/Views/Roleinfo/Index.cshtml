@@ -1,0 +1,146 @@
+﻿@using MyPowerMS.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<T_RoleInfo>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>角色管理</title>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+</head>
+<body>
+    <form method="post" action="">
+        <div class="panel admin-panel">
+            <div class="panel-head"><strong class="icon-reorder"> 角色管理</strong></div>
+            <div class="padding border-bottom">
+                <ul class="search">
+                    <li>
+                        <a class="button border-green" href="/RoleInfo/Add">新增角色</a>
+                        <button type="button" class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
+                        <button type="button" class="button border-red" onclick="DelSelect()"><span class="icon-trash-o"></span> 批量删除</button>
+
+                    </li>
+                </ul>
+            </div>
+            <table class="table  text-center">
+                <tr>
+                    <th width="120">ID</th>
+                    <th>角色名称</th>
+                    <th>角色描述</th>               
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr style="text-align:left;">
+                            <td>
+                                <input type="checkbox" name="id[]" value="@item.id" />
+                            </td>
+                            <td>@item.RoleName </td>
+                            <td>@item.RoleDesc </td>                           
+                            <td>@Convert.ToDateTime(item.CreateDate).ToString("yyyy-MM-dd") </td>
+                            <td>
+                                <div class="button-group">
+                                    <a class="button border-green" href="/RoleInfo/Edit/@item.id">
+                                        <span class="icon-trash-o"></span> 编辑
+                                    </a>&nbsp;&nbsp;&nbsp;
+                                    <a class="button border-red" href="javascript:void(0)" onclick="return del('@item.id')">
+                                        <span class="icon-trash-o"></span> 删除
+                                    </a>
+                                </div>
+                            </td>
+
+                        </tr>
+                    }
+
+                }
+
+            </table>
+        </div>
+
+
+        <div class="pagination" style="margin-top:20px;">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+
+    </form>
+
+    <script type="text/javascript">
+
+        function del(id) {
+            if (confirm("您确定要删除吗?")) {
+                $.ajax({
+                    type: "POST",
+                    url: "/RoleInfo/Del",
+                    data: { id: id },
+                    success: function (data) {
+                        if (data.success) {
+                            alert(data.msg);
+                            window.location.href = "/RoleInfo/Index";
+                        }
+                        else {
+                            alert(data.msg);
+                        }
+                    }
+                });
+            }
+        }
+
+        $("#checkall").click(function () {
+            $("input[name='id[]']").each(function () {
+                if (this.checked) {
+                    this.checked = false;
+                }
+                else {
+                    this.checked = true;
+                }
+            });
+        })
+
+        function DelSelect() {
+            var Checkbox = false;
+            var ids = "";
+            $("input[name='id[]']").each(function () {
+                if (this.checked == true) {
+                    Checkbox = true;
+                    ids += this.value+",";
+                }
+            });
+            alert(ids);
+            if (Checkbox) {
+                var t = confirm("您确认要删除选中的内容吗？");
+                if (t == false) return false;
+                $.ajax({
+                    type: "POST",
+                    url: "RoleInfo/DelSelect",
+                    data: { ids: ids },
+                    success: function (data) {
+                        if (data.success) {
+                            alert(data.msg);
+                            window.location.href = "/RoleInfo/Index";
+                        }
+                        else {
+                            alert(data.msg);
+                        }
+                    }
+                });
+            }
+            else {
+                alert("请选择您要删除的内容!");
+                return false;
+            }
+        }
+
+    </script>
+</body>
+</html>

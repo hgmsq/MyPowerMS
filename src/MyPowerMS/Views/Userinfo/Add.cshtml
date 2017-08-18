@@ -79,6 +79,11 @@
     <script type="text/javascript">
 
         function AddUser() {
+            if ($("#Role").val() == "")
+            {
+                alert("请选择角色");
+                return false;
+            }
             $.ajax({
                 type: "POST",
                 url: "/UserInfo/Add",
