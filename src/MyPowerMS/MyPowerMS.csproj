@@ -413,6 +413,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PerssionController.cs" />
     <Compile Include="Controllers\RoleinfoController.cs" />
     <Compile Include="Controllers\UserinfoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -442,6 +443,8 @@
     <Content Include="Content\ueditor\utf8-net\third-party\video-js\font\vjs.eot" />
     <Content Include="Content\ueditor\utf8-net\third-party\video-js\font\vjs.ttf" />
     <Content Include="Content\ueditor\utf8-net\third-party\video-js\font\vjs.woff" />
+    <Content Include="Views\Perssion\Index.cshtml" />
+    <Content Include="Views\Perssion\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

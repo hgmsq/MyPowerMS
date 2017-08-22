@@ -12,6 +12,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="ParentId" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
     <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Status" Type="Int32" />

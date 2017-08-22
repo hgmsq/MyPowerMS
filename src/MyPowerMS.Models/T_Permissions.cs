@@ -15,6 +15,7 @@ namespace MyPowerMS.Models
     public partial class T_Permissions
     {
         public string id { get; set; }
+        public string ParentId { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public Nullable<int> Status { get; set; }

@@ -5,6 +5,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="char" MaxLength="32" Nullable="false" />
+    <Property Name="ParentId" Type="varchar" MaxLength="32" />
     <Property Name="Title" Type="nvarchar" MaxLength="50" />
     <Property Name="Url" Type="nvarchar" MaxLength="200" />
     <Property Name="Status" Type="int" />

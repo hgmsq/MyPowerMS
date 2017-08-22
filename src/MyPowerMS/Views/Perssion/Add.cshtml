@@ -1,0 +1,82 @@
+﻿@using MyPowerMS.Models
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>新增权限</title>
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.config.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.all.min.js"></script>
+</head>
+<body>
+    <div class="panel admin-panel">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>新增权限</strong></div>
+        <div class="body-content">
+
+            @using (Html.BeginForm("Add", "Perssion", FormMethod.Post, new { @class = "form-x" }))
+            {
+                <div class="form-group">
+                    <div class="label">
+                        <label>权限名称：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="" name="RoleName" id="RoleName" data-validate="required:请输入用户名" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>权限描述：</label>
+                    </div>
+                    <div class="field">
+                        <div class="input w50" style="width:90%" name="RoleDesc" id="RoleDesc">
+                        </div>
+                        <div class="tips"></div>
+                        <script type="text/javascript">
+                            var ue = UE.getEditor('RoleDesc');
+                        </script>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddPerssion()"> 提交</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        function AddPerssion() {      
+            $.ajax({
+                type: "POST",
+                url: "/Perssion/Add",
+                data: {
+                    RoleName: $("#RoleName").val(),
+                    RoleDesc: desc
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                        window.location.href = "/Perssion/Index";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>
