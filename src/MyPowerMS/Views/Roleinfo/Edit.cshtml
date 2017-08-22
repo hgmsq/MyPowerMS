@@ -12,6 +12,8 @@
     <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
     <script src="~/Content/lanse/js/jquery.js"></script>
     <script src="~/Content/lanse/js/pintuer.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.config.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.all.min.js"></script>
 </head>
 <body>
     <div class="panel admin-panel">
@@ -35,7 +37,13 @@
                         <label>角色描述：</label>
                     </div>
                     <div class="field">
-                        <input type="text" class="input w50" style="width:200px;" value="@Model.RoleDesc" name="RoleDesc" id="RoleDesc" data-validate="required:请输入角色描述" />
+                        <textarea name="RoleDesc" id="RoleDesc" style="text-align:left;" >
+                            @Model.RoleDesc
+                        </textarea>
+               
+                        <script type="text/javascript">
+                            var ue = UE.getEditor('RoleDesc');
+                        </script>
                         <div class="tips"></div>
                     </div>
                 </div>
@@ -53,14 +61,21 @@
     </div>
     <script type="text/javascript">
 
+        $(function () {
+            //var edit = new baidu.editor.ui.Editor();   
+            //edit.render('RoleDesc');          
+            //edit.setContent("2222");
+        });
+
         function UpdateRole() {
+            var desc = UE.getEditor('RoleDesc').getPlainTxt(); 
             $.ajax({
                 type: "POST",
                 url: "/Roleinfo/Edit",
                 data: {
                     id: $("#hidId").val(),
                     RoleName: $("#RoleName").val(),
-                    RoleDesc: $("#RoleDesc").val()
+                    RoleDesc: desc
                 },
                 success: function (data) {
                     if (data.success) {

@@ -104,3 +104,6 @@ E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\zh-Hans\System.Web.W
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\obj\Debug\MyPowerMS.Tests.csprojResolveAssemblyReference.cache
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\obj\Debug\MyPowerMS.Tests.dll
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\obj\Debug\MyPowerMS.Tests.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Newtonsoft.Json.dll
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Newtonsoft.Json.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Newtonsoft.Json.xml

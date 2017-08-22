@@ -11,6 +11,8 @@
     <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
     <script src="~/Content/lanse/js/jquery.js"></script>
     <script src="~/Content/lanse/js/pintuer.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.config.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.all.min.js"></script>
 </head>
 <body>
     <div class="panel admin-panel">
@@ -33,8 +35,12 @@
                         <label>角色描述：</label>
                     </div>
                     <div class="field">
-                        <input type="text" class="input w50" style="width:200px;" value="" name="RoleDesc" id="RoleDesc" data-validate="required:请输入真实姓名" />
-                        <div class="tips"></div>
+                        <div class="input w50"  style="width:90%"  name="RoleDesc" id="RoleDesc" >
+                   </div>
+                        <div class="tips" ></div>
+                        <script type="text/javascript">
+                            var ue = UE.getEditor('RoleDesc');
+                        </script>
                     </div>
                 </div>               
 
@@ -50,15 +56,15 @@
         </div>
     </div>
     <script type="text/javascript">
-
+ 
         function AddRole() {
-          
+            var desc = UE.getEditor('RoleDesc').getPlainTxt(); 
             $.ajax({
                 type: "POST",
                 url: "/RoleInfo/Add",
                 data: {
                     RoleName: $("#RoleName").val(),
-                    RoleDesc: $("#RoleDesc").val()
+                    RoleDesc: desc
                 },
                 success: function (data) {
                     if (data.success) {

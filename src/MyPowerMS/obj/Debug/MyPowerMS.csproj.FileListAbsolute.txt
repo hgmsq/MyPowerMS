@@ -113,3 +113,4 @@ E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS\bin\zh-Hans\EntityFramework.resource
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS\obj\Debug\MyPowerMS.csprojResolveAssemblyReference.cache
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS\obj\Debug\MyPowerMS.dll
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS\obj\Debug\MyPowerMS.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS\bin\Newtonsoft.Json.pdb
