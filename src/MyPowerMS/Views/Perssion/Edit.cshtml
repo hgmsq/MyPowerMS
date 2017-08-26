@@ -1,0 +1,111 @@
+﻿@using MyPowerMS.Models
+@model T_Permissions
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>编辑权限</title>
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.config.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.all.min.js"></script>
+</head>
+<body>
+    <div class="panel admin-panel">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>编辑权限</strong></div>
+        <div class="body-content">
+
+            @using (Html.BeginForm("Edit", "Perssion", FormMethod.Post, new { @class = "form-x" }))
+            {
+                <div class="form-group">
+                    <div class="label">
+                        <label>权限名称：</label>
+                        <input type="hidden" id="hidId" name="Id" value="@Model.id" />
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="@Model.Title" name="Title" id="Title" data-validate="required:请输入权限名称" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>父级权限：</label>
+                    </div>
+                    <div class="field">
+                        <select name="ParentId" id="ParentId" style="width:200px;" class="input w50">
+                            <option value="0">一级权限</option>
+                            @if (ViewBag.list != null)
+                            {
+                                foreach (T_Permissions item in ViewBag.list)
+                                {
+                                    if (Model.ParentId == item.id)
+                                    {
+                                        <option selected="selected" value="@item.id">@item.Title</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.id">@item.Title</option>
+                                    }
+                                }
+                            }
+                        </select>
+                        <div class="tips"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>URL：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input w50" style="width:200px;" value="@Model.Url" name="Url" id="Url" />
+                        <div class="tips"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="UpdatePerssion()"> 提交</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $(function () {
+
+        });
+
+        function UpdatePerssion() {
+            $.ajax({
+                type: "POST",
+                url: "/Perssion/Edit",
+                data: {
+                    id: $("#hidId").val(),
+                    Title: $("#Title").val(),
+                    ParentId: $("#ParentId").val(),
+                    Url: $("#Url").val()
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                        window.location.href = "/Perssion/Index";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>

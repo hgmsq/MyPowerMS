@@ -2,3 +2,4 @@ E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\bin\Debug\MyPowerMS.Common.dl
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\bin\Debug\MyPowerMS.Common.pdb
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.dll
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.pdb
+E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.csprojResolveAssemblyReference.cache

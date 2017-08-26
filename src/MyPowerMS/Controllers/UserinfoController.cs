@@ -49,7 +49,7 @@ namespace MyPowerMS.Controllers
         {
             T_UserInfo model = new T_UserInfo();
             model.id = StringHelper.GetGuid();
-            model.PassWord = Password;
+            model.PassWord =BaseSecurity.Base64Encode(Password);
             model.UserName = UserName;
             model.TrueName = TrueName;
             model.CreateDate = DateTime.Now;
@@ -78,7 +78,7 @@ namespace MyPowerMS.Controllers
         public ActionResult Edit(string id,string UserName, string TrueName, string Role, string Password)
         {
             T_UserInfo model = userbll.GetById(id);           
-            model.PassWord = Password;
+            model.PassWord = BaseSecurity.Base64Encode(Password);
             model.UserName = UserName;
             model.TrueName = TrueName;
             model.CreateDate = DateTime.Now;

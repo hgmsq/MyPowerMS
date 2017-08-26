@@ -26,21 +26,35 @@
                         <label>权限名称：</label>
                     </div>
                     <div class="field">
-                        <input type="text" class="input w50" style="width:200px;" value="" name="RoleName" id="RoleName" data-validate="required:请输入用户名" />
+                        <input type="text" class="input w50" style="width:200px;" value="" name="Title" id="Title"  />
                         <div class="tips"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="label">
-                        <label>权限描述：</label>
+                        <label>父级权限：</label>
                     </div>
                     <div class="field">
-                        <div class="input w50" style="width:90%" name="RoleDesc" id="RoleDesc">
-                        </div>
+                        <select name="ParentId" id="ParentId" style="width:200px;" class="input w50" >
+                            <option value="0">一级权限</option>
+                            @if (ViewBag.list != null)
+                            {
+                                foreach (T_Permissions item in ViewBag.list)
+                                {
+                                    <option value="@item.id">@item.Title</option>
+                                }
+                            }
+                        </select>
                         <div class="tips"></div>
-                        <script type="text/javascript">
-                            var ue = UE.getEditor('RoleDesc');
-                        </script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>URL：</label>
+                    </div>
+                    <div class="field">                   
+                         <input type="text" class="input w50" style="width:200px;" value="" name="Url" id="Url"  />
+                        <div class="tips"></div>                   
                     </div>
                 </div>
 
@@ -62,8 +76,9 @@
                 type: "POST",
                 url: "/Perssion/Add",
                 data: {
-                    RoleName: $("#RoleName").val(),
-                    RoleDesc: desc
+                    Title: $("#Title").val(),
+                    ParentId: $("#ParentId").val(),
+                    Url: $("#Url").val()
                 },
                 success: function (data) {
                     if (data.success) {

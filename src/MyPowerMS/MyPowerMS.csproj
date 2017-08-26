@@ -396,6 +396,40 @@
     <Content Include="Content\ueditor\utf8-net\ueditor.config.js" />
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.js" />
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.min.js" />
+    <Content Include="Content\ZTree\css\awesomeStyle\awesome.css" />
+    <Content Include="Content\ZTree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="Content\ZTree\css\demo.css" />
+    <Content Include="Content\ZTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="Content\ZTree\css\metroStyle\img\loading.gif" />
+    <Content Include="Content\ZTree\css\metroStyle\img\metro.gif" />
+    <Content Include="Content\ZTree\css\metroStyle\img\metro.png" />
+    <Content Include="Content\ZTree\css\metroStyle\metroStyle.css" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Content\ZTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Content\ZTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="Content\ZTree\js\jquery-1.4.4.min.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.all.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.all.min.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.core.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.core.min.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.excheck.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.exedit.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.exhide.js" />
+    <Content Include="Content\ZTree\js\jquery.ztree.exhide.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -415,6 +449,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PerssionController.cs" />
     <Compile Include="Controllers\RoleinfoController.cs" />
+    <Compile Include="Controllers\RoleToPerssionController.cs" />
     <Compile Include="Controllers\UserinfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -445,6 +480,10 @@
     <Content Include="Content\ueditor\utf8-net\third-party\video-js\font\vjs.woff" />
     <Content Include="Views\Perssion\Index.cshtml" />
     <Content Include="Views\Perssion\Add.cshtml" />
+    <Content Include="Views\Perssion\Edit.cshtml" />
+    <Content Include="Content\ZTree\css\awesomeStyle\awesome.less" />
+    <Content Include="Content\ZTree\css\awesomeStyle\fa.less" />
+    <Content Include="Views\RoleToPerssion\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

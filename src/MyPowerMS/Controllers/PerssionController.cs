@@ -21,21 +21,24 @@ namespace MyPowerMS.Controllers
         /// </summary>
         /// <returns></returns>
         public ActionResult Index(int page = 1)
-        {            
-            var list = bll.GetAllList().Where(m=>m.ParentId=="0").ToList();//获取一级权限列表          
-            return View(list.ToPagedList(page, 2));
+        {
+                        
+            return View(bll.GetAllList().ToPagedList(page, 2));
         }
         public ActionResult Add()
         {
+            var list = bll.GetAllList().Where(m => m.ParentId == "0").ToList();//获取一级权限列表   
+            ViewBag.list = list;
             return View();
         }
         [HttpPost]
-        public ActionResult Add(string Title,string ParentId,string Status, string Url)
+        public ActionResult Add(string Title,string ParentId,string Url, string Status = "1" )
         {
             T_Permissions model = new T_Permissions();
             model.id = StringHelper.GetGuid();
+            model.ParentId = ParentId;
             model.Title = Title;
-            model.Status = 1;//默认正常
+            model.Status = int.Parse(Status);//默认正常
             model.Url = Url;           
             model.CreateDate = DateTime.Now;           
             try
@@ -56,6 +59,8 @@ namespace MyPowerMS.Controllers
         /// <returns></returns>
         public ActionResult Edit(string id)
         {
+            var list = bll.GetAllList().Where(m => m.ParentId == "0").ToList();//获取一级权限列表   
+            ViewBag.list = list;
             T_Permissions model = bll.GetById(id);
             return View(model);
         }
@@ -67,12 +72,12 @@ namespace MyPowerMS.Controllers
         /// <param name="RoleDesc"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Edit(string id,string Title, string ParentId, string Status, string Url)
+        public ActionResult Edit(string id,string Title, string ParentId, string Url, string Status="1")
         {
-            T_Permissions model = bll.GetById(id);
-            model.id = StringHelper.GetGuid();
+            T_Permissions model = bll.GetById(id);            
             model.Title = Title;
-            model.Status = 1;//默认正常
+            model.ParentId = ParentId;
+            model.Status = int.Parse(Status);//默认正常
             model.Url = Url;
             model.CreateDate = DateTime.Now;
             try

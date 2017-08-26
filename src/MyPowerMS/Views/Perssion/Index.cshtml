@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="renderer" content="webkit">
-    <title>角色管理</title>
+    <title>权限管理</title>
     <link href="~/Content/PagedList.css" rel="stylesheet" />
     <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
     <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
@@ -48,13 +48,20 @@
                             <td>
                                 <input type="checkbox" name="id[]" value="@item.id" />
                             </td>
-                            <td>@item.RoleName </td>
-                            <td>@item.RoleDesc </td>
+                            <td>@item.Title </td>
+                            @if (item.ParentId == "0")
+                            {
+                            <td>一级权限</td>
+                            }
+                            else
+                            {
+                            <td>@item.Url </td>
+                            }
                             <td>@Convert.ToDateTime(item.CreateDate).ToString("yyyy-MM-dd") </td>
                             <td>
                                 <div class="button-group">
-                                    <a class="button border-green" href="/RoleInfo/Edit/@item.id">
-                                        <span class="icon-trash-o"></span> 编辑
+                                    <a class="button border-green" href="/Perssion/Edit/@item.id">
+                                        <span class="icon-edit"></span> 编辑
                                     </a>&nbsp;&nbsp;&nbsp;
                                     <a class="button border-red" href="javascript:void(0)" onclick="return del('@item.id')">
                                         <span class="icon-trash-o"></span> 删除

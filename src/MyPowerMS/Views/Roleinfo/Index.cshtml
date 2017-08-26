@@ -54,11 +54,14 @@
                             <td>
                                 <div class="button-group">
                                     <a class="button border-green" href="/RoleInfo/Edit/@item.id">
-                                        <span class="icon-trash-o"></span> 编辑
+                                        <span class="icon-edit"></span> 编辑
                                     </a>&nbsp;&nbsp;&nbsp;
-                                    <a class="button border-red" href="javascript:void(0)" onclick="return del('@item.id')">
-                                        <span class="icon-trash-o"></span> 删除
+                                    <a class="button border-red"  href="/RoleToPerssion/Index/@item.id">
+                                        <span class="icon-edit"></span> 分配权限
                                     </a>
+                                    @*<a class="button border-red" href="javascript:void(0)" onclick="return del('@item.id')">
+                                        <span class="icon-trash-o"></span> 删除
+                                    </a>*@
                                 </div>
                             </td>
 

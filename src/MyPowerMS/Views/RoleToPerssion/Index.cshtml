@@ -1,0 +1,143 @@
+﻿@using MyPowerMS.Models
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>角色分配权限</title>
+    <link href="~/Content/lanse/css/admin.css" rel="stylesheet" />
+    <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
+    <script src="~/Content/lanse/js/jquery.js"></script>
+    <script src="~/Content/lanse/js/pintuer.js"></script>
+
+    <link href="~/Content/ZTree/css/demo.css" rel="stylesheet" />   
+    <link href="~/Content/ZTree/css/metroStyle/metroStyle.css" rel="stylesheet" />
+    @*<link href="~/Content/ZTree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" />*@
+    <script src="~/Content/ZTree/js/jquery.ztree.core.js"></script>
+    <script src="~/Content/ZTree/js/jquery.ztree.excheck.min.js"></script>
+</head>
+<body>
+    <div class="panel admin-panel">
+        <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>角色分配权限</strong></div>
+        <div class="body-content">
+
+            @using (Html.BeginForm("Add", "UserInfo", FormMethod.Post, new { @class = "form-x" }))
+            {
+                <div class="form-group">
+                    <div class="label">
+                        <label>角色名称：</label>
+                    </div>
+                    <div class="field">   
+                      <input type="hidden" id="hidroleid" value="@ViewBag.role.id" />                    
+                        <input type="text" class="input w50" style="width:200px;" readonly="readonly" value="@ViewBag.role.RoleName"  />
+                         <div class="tips"></div>
+                                
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>权限树：</label>
+                    </div>
+                    <div class="field">
+                        <ul id="treeDemo" class="ztree"></ul>
+                    </div>
+                </div>             
+                <div class="form-group">
+                    <div class="label">
+                        <label></label>
+                    </div>
+                    <div class="field">
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddRoleToPerssion()"> 保存</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var setting = {
+            async: {
+                enable: true,
+                url: '/RoleToPerssion/GetPerssionTree',//异步加载时的请求地址
+                autoParam: ["roleid"],//提交参数
+                type: 'get',
+                dataType: 'json'
+            },
+            check: {
+                enable: true,   //true / false 分别表示 显示 / 不显示 复选框或单选框
+                autoCheckTrigger: true,   //true / false 分别表示 触发 / 不触发 事件回调函数
+                chkStyle: "checkbox",   //勾选框类型(checkbox 或 radio）
+                //chkboxType: { "Y": "p", "N": "s" }   //勾选 checkbox 对于父子节点的关联关系
+            },
+            checkable: true,
+            showIcon: true,
+            showLine: true,
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+            expandSpeed: "",
+            callback: {
+                onClick: zTreeOnClick
+            }
+        };
+
+        $(document).ready(function () {
+            $.ajax({
+                url: '/RoleToPerssion/GetPerssionTree?roleid=""',//异步加载时的请求地址
+                type: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    $.fn.zTree.init($("#treeDemo"), setting, data);
+                }
+            });
+        });
+      
+        //单击时获取zTree节点的Id,和value的值
+        function zTreeOnClick(event, treeId, treeNode, clickFlag) {
+            var treeValue = treeNode.Id + "," + treeNode.name;
+            alert(treeNode.Id + "," + treeNode.name);
+        };
+
+        function AddRoleToPerssion() {
+            var treeObj = $.fn.zTree.getZTreeObj("treeDemo"),
+                nodes = treeObj.getCheckedNodes(true),
+                v = "";
+            var ids = "";
+            for (var i = 0; i < nodes.length; i++) {
+                v += nodes[i].name + ",";
+                if (nodes[i].PId != "0") {
+                    ids += nodes[i].Id + ",";
+                }
+            
+            }
+            alert(ids); //获取选中节点的值
+            return false;
+
+            $.ajax({
+                type: "POST",
+                url: "/UserInfo/Add",
+                data: {
+                    UserName: $("#UserName").val(),
+                    TrueName: $("#TrueName").val(),
+                    Role: $("#Role").val(),
+                    Password: $("#Password").val(),
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                        window.location.href = "/UserInfo/Index";
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>
