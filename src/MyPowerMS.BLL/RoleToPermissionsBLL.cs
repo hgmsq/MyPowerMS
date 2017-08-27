@@ -8,7 +8,7 @@ using MyPowerMS.Models;
 
 namespace MyPowerMS.BLL
 {
-   public class RoleToPermissionsBLL : IRoleToPermissionsBLL
+    public class RoleToPermissionsBLL : IRoleToPermissionsBLL
     {
         public readonly RoleToPermissions dal = new RoleToPermissions();
         /// <summary>
@@ -54,6 +54,16 @@ namespace MyPowerMS.BLL
         public bool Update(T_RoleToPermissions model)
         {
             return dal.Update(model);
+        }
+        /// <summary>
+        /// 分配权限
+        /// </summary>
+        /// <param name="addlist"></param>
+        /// <param name="dellist"></param>
+        /// <returns></returns>
+        public bool SaveRolePerssion(List<T_RoleToPermissions> addlist, List<T_RoleToPermissions> dellist)
+        {
+            return dal.SaveRolePerssion(addlist, dellist);
         }
     }
 }

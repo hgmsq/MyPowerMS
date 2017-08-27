@@ -41,7 +41,7 @@
                         <label>权限树：</label>
                     </div>
                     <div class="field">
-                        <ul id="treeDemo" class="ztree"></ul>
+                        <ul style="width:400px;height:200px;" id="treeDemo" class="ztree"></ul>
                     </div>
                 </div>             
                 <div class="form-group">
@@ -49,7 +49,8 @@
                         <label></label>
                     </div>
                     <div class="field">
-                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddRoleToPerssion()"> 保存</button>
+                        <button class="button bg-main icon-check-square-o" type="button" onclick="AddRoleToPerssion()"> 分配权限</button>
+                       &nbsp;&nbsp; <a style="text-decoration:none;" class="button bg-main icon-check-square-o" href="/RoleInfo/Index">返回角色管理</a>
                     </div>
                 </div>
             }
@@ -98,8 +99,8 @@
       
         //单击时获取zTree节点的Id,和value的值
         function zTreeOnClick(event, treeId, treeNode, clickFlag) {
-            var treeValue = treeNode.Id + "," + treeNode.name;
-            alert(treeNode.Id + "," + treeNode.name);
+           // var treeValue = treeNode.Id + "," + treeNode.name;
+            //alert(treeNode.Id + "," + treeNode.name);
         };
 
         function AddRoleToPerssion() {
@@ -113,23 +114,18 @@
                     ids += nodes[i].Id + ",";
                 }
             
-            }
-            alert(ids); //获取选中节点的值
-            return false;
-
+            }          
             $.ajax({
                 type: "POST",
-                url: "/UserInfo/Add",
+                url: "/RoleToPerssion/SaveRolePerssion",
                 data: {
-                    UserName: $("#UserName").val(),
-                    TrueName: $("#TrueName").val(),
-                    Role: $("#Role").val(),
-                    Password: $("#Password").val(),
+                    roleId: $("#hidroleid").val(),
+                    ids: ids                
                 },
                 success: function (data) {
                     if (data.success) {
                         alert(data.msg);
-                        window.location.href = "/UserInfo/Index";
+                        window.location.href = "/RoleInfo/Index";
                     }
                     else {
                         alert(data.msg);

@@ -6,10 +6,12 @@ using System.Web.Mvc;
 using MyPowerMS.Models;
 using MyPowerMS.Common;
 using MyPowerMS.BLL;
+using MyPowerMS.Extensions;
 
 namespace MyPowerMS.Controllers
 {
-    public class AdminIndexController : Controller
+    //[UserAuthorize]
+    public class AdminIndexController:BaseController
     {       
         // GET: AdminIndex
         public ActionResult Index()

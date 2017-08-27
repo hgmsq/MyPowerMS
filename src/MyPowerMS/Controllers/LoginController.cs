@@ -22,18 +22,35 @@ namespace MyPowerMS.Controllers
         [HttpPost]
         public ActionResult Index(string username,string password)
         {
-            T_UserInfo model = userService.GetAllList().Where(m => m.UserName == username).Where(m=>m.PassWord==BaseSecurity.Base64Decode(password)).SingleOrDefault();
+            T_UserInfo model = userService.GetAllList().Where(m => m.UserName == username).Where(m=>m.PassWord==BaseSecurity.Base64Encode(password)).SingleOrDefault();
             if (model != null)
             {
                 Session["UserId"] = model.id;
                 Session["UserName"] = model.UserName;
                 Session["password"] = model.PassWord;
+                HttpCookie _cookie = new HttpCookie("User");
+                _cookie.Values.Add("UserId", model.id);
+                _cookie.Values.Add("UserName", model.UserName);
+                _cookie.Values.Add("Password",BaseSecurity.Base64Encode(model.PassWord));
+                Response.Cookies.Add(_cookie);
                 return RedirectToAction("Index", "AdminIndex");               
             }
             else
             {
                 return View();
             }
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            if (Request.Cookies["User"] != null)
+            {
+                HttpCookie _cookie = Request.Cookies["User"];
+                _cookie.Expires = DateTime.Now.AddHours(-1);
+                Response.Cookies.Add(_cookie);
+            }
+            return RedirectToAction("Index", "Login");
         }
     }
 }

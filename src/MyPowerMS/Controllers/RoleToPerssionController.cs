@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyPowerMS.BLL;
 using MyPowerMS.Models;
+using MyPowerMS.Common;
 namespace MyPowerMS.Controllers
 {
     /// <summary>
@@ -14,6 +15,7 @@ namespace MyPowerMS.Controllers
     {
         PermissionsBLL perssionbll = new PermissionsBLL();
         RolesInfoBLL rolebll = new RolesInfoBLL();
+        RoleToPermissionsBLL bll = new RoleToPermissionsBLL();
         // GET: RoleToPerssion
         public ActionResult Index(string id)
         {
@@ -36,9 +38,10 @@ namespace MyPowerMS.Controllers
                 {
                     result.Add(new PerssonTreeModel {
                         Id = item.id,
-                        name =item.Title,
-                        PId =item.ParentId,
-                        nocheck= false,
+                        name = item.Title,
+                        PId = item.ParentId,
+                        nocheck = true,
+                        open = true,
                         children = GetChildrenList(item.id,childrenlist)
                     });
                 }
@@ -52,7 +55,6 @@ namespace MyPowerMS.Controllers
         /// <param name="id"></param>
         /// <param name="list"></param>
         /// <returns></returns>
-
         public List<PerssonTreeModel> GetChildrenList(string id, List<T_Permissions> list)
         {
             var result = new List<PerssonTreeModel>();
@@ -61,19 +63,59 @@ namespace MyPowerMS.Controllers
             {
                 foreach (var item in list)
                 {
-                    result.Add(new PerssonTreeModel {
+                    result.Add(new PerssonTreeModel
+                    {
                         Id = item.id,
-                        name=item.Title,
-                        PId=id,
+                        name = item.Title,
+                        PId = id,
+                        open = false,
                         nocheck = false,
-                        children =null
+                        children = null
                     });
                 }
             }
             return result;
         }
 
-        public class PerssonTreeModel           
+        /// <summary>
+        /// 角色分配权限
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult SaveRolePerssion(string roleId,string ids)
+        {
+            ids = ids.TrimEnd(new char[] { ','});
+            string[] arr = ids.Split(',');
+            var dellist = bll.GetAllList().Where(m => m.RoleId == roleId).ToList();
+            var addlist = new List<T_RoleToPermissions>();
+            if(arr!=null && arr.Count()>0)
+            {
+                foreach(var item in arr)
+                {
+                    addlist.Add(new T_RoleToPermissions
+                    {
+                        id=StringHelper.GetGuid(),
+                        Permissions=item,
+                        RoleId=roleId
+                    });
+                }
+            }
+            if(bll.SaveRolePerssion(addlist,dellist))
+            {
+                return Json(new { success = true, msg = "操作成功" });
+            }
+            else
+            {
+                return Json(new { success = false, msg = "操作失败" });
+            }
+        }
+
+        #region 权限树model     
+    
+
+        public class PerssonTreeModel 
         {
             public string Id { get; set; }
             /// <summary>
@@ -89,6 +131,11 @@ namespace MyPowerMS.Controllers
             /// 是否有复选框
             /// </summary>
             public bool nocheck { get; set; }
+            /// <summary>
+            /// 是否展开节点
+            /// </summary>
+            public bool open { get; set; }
         }
+        #endregion
     }
 }

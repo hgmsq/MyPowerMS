@@ -58,5 +58,41 @@ namespace MyPowerMS.DAL
         {
             return DapperBase.conn.Update<T_RoleToPermissions>(model);
         }
+        /// <summary>
+        /// 分配权限
+        /// </summary>
+        /// <param name="addlist"></param>
+        /// <param name="dellist"></param>
+        /// <returns></returns>
+        public bool SaveRolePerssion(List<T_RoleToPermissions> addlist, List<T_RoleToPermissions> dellist)
+        {
+            try
+            {
+                IDbTransaction transaction = null;
+                if (dellist != null && dellist.Count > 0)
+                {
+                    foreach (var item in dellist)
+                    {
+                        DapperBase.conn.Delete(item, transaction);
+                    }
+                }
+                DynamicParameters parameters = new DynamicParameters();
+                //参数名，value  
+                parameters.Add("Capacity", addlist.Count);
+                if(addlist!=null && addlist.Count>0)
+                {
+                    foreach(var item in addlist)
+                    {
+                        DapperBase.conn.Insert(item, transaction);
+                    }
+                }
+                
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

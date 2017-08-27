@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyPowerMS.Models;
 using MyPowerMS.BLL;
+using MyPowerMS.Common;
 
 namespace MyPowerMS.Controllers
 {
@@ -12,12 +13,14 @@ namespace MyPowerMS.Controllers
     {
         #region 接口
         IUserInfoBLL userService = new UserInfoBLL();
-        BaseService baseservice = new BaseService();
+        PermissionsBLL perssionbll = new PermissionsBLL();
+        BaseService baseservice = new BaseService();       
         #endregion
         public static T_UserInfo currentUser = null;   
         public BaseController()
-        {
+        { 
             currentUser = GetCurrentAccount();
+            ViewBag.perssionList = GetPermissions();
         }
         /// <summary>
         /// 获取当前登陆人的账户信息
@@ -25,9 +28,12 @@ namespace MyPowerMS.Controllers
         /// <returns>账户信息</returns>
         protected T_UserInfo GetCurrentAccount()
         {
-            if (Session["UserId"] != null)
+
+            HttpCookie _cookie = CookieHelper.GetCookie("User");       
+
+            if (_cookie["UserId"] != null)
             {
-                return userService.GetById(Session["UserId"].ToString());
+                return userService.GetById(_cookie["UserId"].ToString());
             }
             else
             {
@@ -38,14 +44,25 @@ namespace MyPowerMS.Controllers
         /// 当前用户拥有权限
         /// </summary>
         /// <returns></returns>
-        protected List<T_Permissions> GetPermissions()
+        protected List<PerssionModel> GetPermissions()
         {
-            if (Session["UserId"] != null)
+            HttpCookie _cookie = CookieHelper.GetCookie("User");
+            var result =new  List<PerssionModel>();
+            if (_cookie["UserId"] != null)
             {
-                return baseservice.GetPermissions(Session["UserId"].ToString());
+                var perssionlist=baseservice.GetPermissions(_cookie["UserId"].ToString());//子权限
+                List<string> pids = perssionlist.Select(m => m.ParentId).Distinct().ToList();
+                foreach(var item in pids)
+                {
+                    result.Add(new PerssionModel {
+                        ParentPermissions = perssionbll.GetById(item),
+                        childrenList=perssionlist.Where(m=>m.ParentId==item).ToList()
+                    });
+                }
+                return result;
             }
             else
-            {
+            {             
                 return null;
             }
         }
