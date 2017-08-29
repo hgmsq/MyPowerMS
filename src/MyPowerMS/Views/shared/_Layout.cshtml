@@ -26,7 +26,7 @@
          &nbsp;&nbsp;<a class="button button-little bg-red" href="login.html"><span class="icon-power-off"></span> 退出登录</a> 
         </div>
     </div>
-    <div class="leftnav">
+    <div class="leftnav" id="divperssion">
         <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
         <h2><span class="icon-user"></span>基本设置</h2>
         <ul style="display:block">
@@ -43,6 +43,22 @@
             <li><a href="Roleinfo/index" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
             <li><a href="Perssion/index" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
         </ul>
+        @if (ViewBag.perssionList != null)
+        {
+            foreach (var item in ViewBag.perssionList)
+            {
+            <h2><span class="icon-pencil-square-o"></span>@item.ParentPermissions.Title</h2>
+            <ul>
+                @if (item.childrenList != null)
+                {
+                    foreach (var item1 in item.childrenList)
+                    {
+                        <li><a href="@item1.Url" target="right"><span class="icon-caret-right"></span>@item1.Title</a></li>                    }
+                }
+            </ul>
+            }
+        }
+
     </div>
     <script type="text/javascript">
 $(function(){
@@ -72,6 +88,41 @@ $(function(){
     <div style="text-align:center;">
         <p>来源:<a href="#" target="_blank">天使不哭</a></p>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tbody = "";
+            $.ajax({
+                url: '/Base/GetPerssionList',
+                type: 'get',
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    if(data!=null)
+                    {
+                        $.each(data, function (index, data) {
+                            //<h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
+                            //<ul>
+                            //    <li><a href="Userinfo/index" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
+                            //    <li><a href="Roleinfo/index" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
+                            //    <li><a href="Perssion/index" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
+                            //</ul>
+                            tbody += "<h2><span class=\"icon-pencil-square-o\"></span>" + data.ParentPermissions.Title + "</h2>";
+                            if (data.childrenList != null)
+                            {
+                                tbody += "<ul style=\"display:none;\">";
+                                $.each(data.childrenList, function (index, data) {
+                                    tbody += "<li><a href=\""+data.Url+"\" target=\"right\"><span class=\"icon-caret-right\"></span>"+data.Title+"</a></li>";
+                                });
+                                tbody += "</ul>";
+                            }
+               
+                        });
+                       // $("#divperssion").append(tbody);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

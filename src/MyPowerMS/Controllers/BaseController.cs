@@ -22,6 +22,11 @@ namespace MyPowerMS.Controllers
             currentUser = GetCurrentAccount();
             ViewBag.perssionList = GetPermissions();
         }
+        public JsonResult GetPerssionList()
+        {
+            return Json(GetPermissions(),JsonRequestBehavior.AllowGet);
+        }
+
         /// <summary>
         /// 获取当前登陆人的账户信息
         /// </summary>

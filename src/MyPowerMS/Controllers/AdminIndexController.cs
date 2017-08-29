@@ -17,6 +17,7 @@ namespace MyPowerMS.Controllers
         public ActionResult Index()
         {
             //string str = Session["UserName"].ToString();
+            ViewBag.perssionList = GetPermissions();
             return View();
         }
     }
