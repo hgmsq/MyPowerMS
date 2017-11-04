@@ -42,6 +42,7 @@
     <Property Name="id" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="TrueName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="pic" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="PassWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="Role" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
     <Property Name="CreateDate" Type="DateTime" Precision="3" />

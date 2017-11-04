@@ -45,13 +45,14 @@ namespace MyPowerMS.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Add(string UserName,string TrueName,string Role,string Password)
+        public ActionResult Add(string UserName,string TrueName,string Role,string Password,string Pic)
         {
             T_UserInfo model = new T_UserInfo();
             model.id = StringHelper.GetGuid();
-            model.PassWord =BaseSecurity.Base64Encode(Password);
+            model.PassWord =BaseSecurity.Md5Hash("111111");
             model.UserName = UserName;
             model.TrueName = TrueName;
+            model.pic = Pic;
             model.CreateDate = DateTime.Now;
             model.Role = Role;
             try
@@ -75,14 +76,15 @@ namespace MyPowerMS.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Edit(string id,string UserName, string TrueName, string Role, string Password)
+        public ActionResult Edit(string id,string UserName, string TrueName, string Role, string Password, string Pic)
         {
             T_UserInfo model = userbll.GetById(id);           
-            model.PassWord = BaseSecurity.Base64Encode(Password);
+            model.PassWord = BaseSecurity.Md5Hash(Password);
             model.UserName = UserName;
             model.TrueName = TrueName;
             model.CreateDate = DateTime.Now;
             model.Role = Role;
+            model.pic = Pic;
             try
             {
                 if(userbll.Update(model))

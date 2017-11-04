@@ -81,6 +81,7 @@
                             <div id="filePicker">选择图片</div>
                         </div>
                     </div>
+                    <input type="hidden" name="pic" id="pic" />
                 </div>
                 <div class="form-group">
                     <div class="label">
@@ -108,6 +109,7 @@
                     UserName: $("#UserName").val(),
                     TrueName: $("#TrueName").val(),
                     Role: $("#Role").val(),
+                    Pic: $("#pic").val(),
                     Password: $("#Password").val(),
                 },
                 success: function (data) {

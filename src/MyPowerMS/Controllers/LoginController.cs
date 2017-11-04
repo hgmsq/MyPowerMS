@@ -22,7 +22,8 @@ namespace MyPowerMS.Controllers
         [HttpPost]
         public ActionResult Index(string username,string password)
         {
-            T_UserInfo model = userService.GetAllList().Where(m => m.UserName == username).Where(m=>m.PassWord==BaseSecurity.Base64Encode(password)).SingleOrDefault();
+            var passwordnew = BaseSecurity.Md5Hash(password);
+            T_UserInfo model = userService.GetAllList().Where(m => m.UserName == username).Where(m => m.PassWord == passwordnew).SingleOrDefault();
             if (model != null)
             {
                 Session["UserId"] = model.id;
@@ -31,7 +32,8 @@ namespace MyPowerMS.Controllers
                 HttpCookie _cookie = new HttpCookie("User");
                 _cookie.Values.Add("UserId", model.id);
                 _cookie.Values.Add("UserName", model.UserName);
-                _cookie.Values.Add("Password",BaseSecurity.Base64Encode(model.PassWord));
+                //_cookie.Values.Add("Password", BaseSecurity.Base64Encode(model.PassWord));
+                _cookie.Values.Add("Password",passwordnew);
                 Response.Cookies.Add(_cookie);
                 return RedirectToAction("Index", "AdminIndex");               
             }

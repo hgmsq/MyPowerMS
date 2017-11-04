@@ -20,7 +20,8 @@ namespace MyPowerMS.Controllers
 
         public ActionResult UpLoad(string id, string name, string type, string lastModifiedDate, int size, HttpPostedFileBase file)
         {
-            string urlPath = "../Upload/Files";
+            string urlPath = "/Upload/Files";
+            //string urlPath = "../Upload/Files";
             string filePathName = string.Empty;
 
             string localPath = Path.Combine(HttpRuntime.AppDomainAppPath, "Upload/Files");

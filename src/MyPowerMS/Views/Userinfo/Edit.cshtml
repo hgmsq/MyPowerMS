@@ -13,8 +13,10 @@
     <script src="~/Content/lanse/js/jquery.js"></script>
     <script src="~/Content/lanse/js/pintuer.js"></script>
     @*百度上传*@
+    @*百度上传*@
     <link href="~/Content/webuploader/webuploader.css" rel="stylesheet" />
     <script src="~/Content/webuploader/webuploader.js"></script>
+    <script src="~/Content/uploadphoto.js"></script>
 
 </head>
 <body>
@@ -82,15 +84,16 @@
                         <label>头像：</label>
                     </div>
                     <div class="field">
-                        <div id="uploader" class="wu-example">
-                            <!--用来存放文件信息-->
-                            <div id="thelist" class="uploader-list"></div>
-                            <div class="btns">
-                                <div id="picker">选择文件</div>
-                                <button id="ctlBtn" class="btn btn-default">开始上传</button>
-                            </div>
+                        <!--dom结构部分-->
+                        <div id="uploader-demo">
+                            <!--用来存放item-->
+                            <div id="fileList" class="uploader-list"></div>
+                            <div id="filePicker">选择图片</div>
+                            <img src="@Model.pic" alt="" style="height:50px;width:50px;" />
                         </div>
                     </div>
+                    
+                    <input type="hidden" name="pic" id="pic" />
                 </div>
                 <div class="form-group">
                     <div class="label">
@@ -114,6 +117,7 @@
                     UserName: $("#UserName").val(),
                     TrueName: $("#TrueName").val(),
                     Role: $("#Role").val(),
+                    Pic: $("#pic").val(),
                     Password: $("#Password").val(),
                 },
                 success: function (data) {

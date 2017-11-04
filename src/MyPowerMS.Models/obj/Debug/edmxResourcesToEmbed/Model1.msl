@@ -38,6 +38,7 @@
           <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
           <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
           <ScalarProperty Name="TrueName" ColumnName="TrueName" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="id" ColumnName="id" />

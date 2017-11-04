@@ -35,6 +35,7 @@
     <Property Name="id" Type="char" MaxLength="32" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="50" />
     <Property Name="TrueName" Type="nvarchar" MaxLength="50" />
+    <Property Name="pic" Type="varchar" MaxLength="200" />
     <Property Name="PassWord" Type="nvarchar" MaxLength="200" />
     <Property Name="Role" Type="char" MaxLength="32" />
     <Property Name="CreateDate" Type="datetime" />
