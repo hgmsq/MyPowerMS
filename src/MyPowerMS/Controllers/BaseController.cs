@@ -16,11 +16,24 @@ namespace MyPowerMS.Controllers
         PermissionsBLL perssionbll = new PermissionsBLL();
         BaseService baseservice = new BaseService();       
         #endregion
-        public static T_UserInfo currentUser = null;   
+        public static T_UserInfo currentUser = null;
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (GetCurrentAccount() != null)//当前用户存在
+            {
+                currentUser = GetCurrentAccount();
+                ViewBag.perssionList = GetPermissions();
+            }
+            else
+            {
+                filterContext.HttpContext.Response.Redirect("/Login/Index");
+            }
+
+        }
         public BaseController()
         { 
-            currentUser = GetCurrentAccount();
-            ViewBag.perssionList = GetPermissions();
+            //currentUser = GetCurrentAccount();
+            //ViewBag.perssionList = GetPermissions();
         }
         public JsonResult GetPerssionList()
         {
@@ -36,7 +49,7 @@ namespace MyPowerMS.Controllers
 
             HttpCookie _cookie = CookieHelper.GetCookie("User");       
 
-            if (_cookie["UserId"] != null)
+            if (_cookie != null)
             {
                 return userService.GetById(_cookie["UserId"].ToString());
             }

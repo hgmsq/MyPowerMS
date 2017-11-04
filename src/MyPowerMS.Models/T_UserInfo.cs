@@ -17,6 +17,7 @@ namespace MyPowerMS.Models
         public string id { get; set; }
         public string UserName { get; set; }
         public string TrueName { get; set; }
+        public string pic { get; set; }
         public string PassWord { get; set; }
         public string Role { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }

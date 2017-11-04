@@ -16,8 +16,6 @@ namespace MyPowerMS.Controllers
         // GET: AdminIndex
         public ActionResult Index()
         {
-            //string str = Session["UserName"].ToString();
-            ViewBag.perssionList = GetPermissions();
             return View();
         }
     }

@@ -396,6 +396,24 @@
     <Content Include="Content\ueditor\utf8-net\ueditor.config.js" />
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.js" />
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.min.js" />
+    <Content Include="Content\uploadphoto.js" />
+    <Content Include="Content\webuploader\Uploader.swf" />
+    <Content Include="Content\webuploader\webuploader.css" />
+    <Content Include="Content\webuploader\webuploader.custom.js" />
+    <Content Include="Content\webuploader\webuploader.custom.min.js" />
+    <Content Include="Content\webuploader\webuploader.fis.js" />
+    <Content Include="Content\webuploader\webuploader.flashonly.js" />
+    <Content Include="Content\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Content\webuploader\webuploader.html5only.js" />
+    <Content Include="Content\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Content\webuploader\webuploader.js" />
+    <Content Include="Content\webuploader\webuploader.min.js" />
+    <Content Include="Content\webuploader\webuploader.noimage.js" />
+    <Content Include="Content\webuploader\webuploader.noimage.min.js" />
+    <Content Include="Content\webuploader\webuploader.nolog.js" />
+    <Content Include="Content\webuploader\webuploader.nolog.min.js" />
+    <Content Include="Content\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Content\webuploader\webuploader.withoutimage.min.js" />
     <Content Include="Content\ZTree\css\awesomeStyle\awesome.css" />
     <Content Include="Content\ZTree\css\awesomeStyle\img\loading.gif" />
     <Content Include="Content\ZTree\css\demo.css" />
@@ -450,6 +468,7 @@
     <Compile Include="Controllers\PerssionController.cs" />
     <Compile Include="Controllers\RoleinfoController.cs" />
     <Compile Include="Controllers\RoleToPerssionController.cs" />
+    <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserinfoController.cs" />
     <Compile Include="Extensions\UserAuthorizeAttribute .cs" />
     <Compile Include="Global.asax.cs">
@@ -486,6 +505,7 @@
     <Content Include="Content\ZTree\css\awesomeStyle\awesome.less" />
     <Content Include="Content\ZTree\css\awesomeStyle\fa.less" />
     <Content Include="Views\RoleToPerssion\Index.cshtml" />
+    <Content Include="Content\webuploader\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -495,7 +515,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Upload\Files\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyPowerMS.BLL\MyPowerMS.BLL.csproj">

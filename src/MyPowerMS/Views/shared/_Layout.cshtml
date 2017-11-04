@@ -27,22 +27,17 @@
         </div>
     </div>
     <div class="leftnav" id="divperssion">
-        <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div>
-        <h2><span class="icon-user"></span>基本设置</h2>
-        <ul style="display:block">
-            <li><a href="info.html" target="right"><span class="icon-caret-right"></span>网站设置</a></li>
-            <li><a href="pass.html" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
-            <li><a href="page.html" target="right"><span class="icon-caret-right"></span>单页管理</a></li>
-            <li><a href="adv.html" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>
-            <li><a href="book.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
-            <li><a href="column.html" target="right"><span class="icon-caret-right"></span>栏目管理</a></li>
-        </ul>
-        <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
-        <ul>
-            <li><a href="Userinfo/index" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
-            <li><a href="Roleinfo/index" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
-            <li><a href="Perssion/index" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
-        </ul>
+        <div class="leftnav-title"><strong><span class="icon-list"></span>功能菜单</strong></div>
+        @*<h2><span class="icon-user"></span>基本设置</h2>*@
+        <ul style="display:none">
+            @*<ul style="display:block">*@
+                <li><a href="info.html" target="right"><span class="icon-caret-right"></span>网站设置</a></li>
+                <li><a href="pass.html" target="right"><span class="icon-caret-right"></span>修改密码</a></li>
+                <li><a href="page.html" target="right"><span class="icon-caret-right"></span>单页管理</a></li>
+                <li><a href="adv.html" target="right"><span class="icon-caret-right"></span>首页轮播</a></li>
+                <li><a href="book.html" target="right"><span class="icon-caret-right"></span>留言管理</a></li>
+                <li><a href="column.html" target="right"><span class="icon-caret-right"></span>栏目管理</a></li>
+            </ul>
         @if (ViewBag.perssionList != null)
         {
             foreach (var item in ViewBag.perssionList)
@@ -74,7 +69,7 @@ $(function(){
 });
     </script>
     <ul class="bread">
-        <li><a href="{:U('Index/info')}" target="right" class="icon-home"> 首页</a></li>
+        <li><a href="/UserInfo/Index" target="right" class="icon-home"> 首页</a></li>
         <li><a href="##" id="a_leader_txt">网站信息</a></li>
         <li style="display:none;">
             <b>当前语言：</b><span style="color:red;">中文</php></span>
@@ -100,12 +95,6 @@ $(function(){
                     if(data!=null)
                     {
                         $.each(data, function (index, data) {
-                            //<h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
-                            //<ul>
-                            //    <li><a href="Userinfo/index" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
-                            //    <li><a href="Roleinfo/index" target="right"><span class="icon-caret-right"></span>角色管理</a></li>
-                            //    <li><a href="Perssion/index" target="right"><span class="icon-caret-right"></span>权限管理</a></li>
-                            //</ul>
                             tbody += "<h2><span class=\"icon-pencil-square-o\"></span>" + data.ParentPermissions.Title + "</h2>";
                             if (data.childrenList != null)
                             {
@@ -116,8 +105,7 @@ $(function(){
                                 tbody += "</ul>";
                             }
                
-                        });
-                       // $("#divperssion").append(tbody);
+                        });                  
                     }
                 }
             });

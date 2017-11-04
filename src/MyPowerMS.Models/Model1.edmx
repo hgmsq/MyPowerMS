@@ -40,6 +40,7 @@
           <Property Name="id" Type="char" MaxLength="32" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="TrueName" Type="nvarchar" MaxLength="50" />
+          <Property Name="pic" Type="varchar" MaxLength="200" />
           <Property Name="PassWord" Type="nvarchar" MaxLength="200" />
           <Property Name="Role" Type="char" MaxLength="32" />
           <Property Name="CreateDate" Type="datetime" />
@@ -106,6 +107,7 @@
           <Property Name="id" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TrueName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pic" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="PassWord" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Role" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
@@ -162,6 +164,7 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
                 <ScalarProperty Name="TrueName" ColumnName="TrueName" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="id" ColumnName="id" />
