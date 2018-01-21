@@ -12,52 +12,9 @@ using System.Data;
 
 namespace MyPowerMS.DAL
 {
-   public class RoleToPermissions
+   public class RoleToPermissions : BaseDAL<T_RoleToPermissions>
     {
-        /// <summary>
-        /// 获取所有列表
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<T_RoleToPermissions> GetAllList()
-        {
-            return DapperBase.conn.GetList<T_RoleToPermissions>();
-        }
-        /// <summary>
-        /// 获取单个实体
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public T_RoleToPermissions GetById(string id)
-        {
-            return DapperBase.conn.Get<T_RoleToPermissions>(id);
-        }
-        /// <summary>
-        /// 插入一条记录
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public void Add(T_RoleToPermissions model)
-        {
-            DapperBase.conn.Insert<T_RoleToPermissions>(model);
-        }
-        /// <summary>
-        /// 删除实体
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public bool Delete(T_RoleToPermissions model)
-        {
-            return DapperBase.conn.Delete<T_RoleToPermissions>(model);
-        }
-        /// <summary>
-        /// 更新实体
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public bool Update(T_RoleToPermissions model)
-        {
-            return DapperBase.conn.Update<T_RoleToPermissions>(model);
-        }
+        
         /// <summary>
         /// 分配权限
         /// </summary>

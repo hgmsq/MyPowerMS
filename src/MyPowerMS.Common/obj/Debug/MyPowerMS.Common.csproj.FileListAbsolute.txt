@@ -3,3 +3,8 @@ E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\bin\Debug\MyPowerMS.Common.pd
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.dll
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.pdb
 E:\Git\2017\MyPower\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.csprojResolveAssemblyReference.cache
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Common\bin\Debug\MyPowerMS.Common.dll
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Common\bin\Debug\MyPowerMS.Common.pdb
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.csprojResolveAssemblyReference.cache
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.dll
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Common\obj\Debug\MyPowerMS.Common.pdb
