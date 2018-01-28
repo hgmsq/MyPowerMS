@@ -7,16 +7,20 @@ using MyPowerMS.Models;
 using MyPowerMS.Common;
 using MyPowerMS.BLL;
 
+
 namespace MyPowerMS.Controllers
 {
     public class LoginController : Controller
     {
         #region 接口
+
+        //Common.StringHelper test{get;set;}
+    
         IUserInfoBLL userService = new UserInfoBLL();        
         #endregion
         // GET: Login
-        public ActionResult Index()
-        {
+        public ActionResult Index()        {
+            
             return View();
         }
         [HttpPost]
