@@ -12,7 +12,7 @@ namespace MyPowerMS.Controllers
         // GET: Test
         public ActionResult Index()
         {
-            string str = test1.Hello();
+            string str = test.Hello();
             return Content("111");
         }
     }
