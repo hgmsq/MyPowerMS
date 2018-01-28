@@ -2,7 +2,7 @@
 <objects xmlns="http://www.springframework.net">
   <description>An  example that demonstrates simple IoC features.</description>
   <!--object的name可以自定义，property中的属性name不能自定义-->
-  <object name="" type="SpringNet.MVC.Controllers.LoginController,SpringNet.MVC" singleton="false">
+  <object name="" type="MyPowerMS.Controllers.TestController,MyPowerMS" singleton="false">
     <property name="test" ref="TestService"></property>
   </object>
 </objects>

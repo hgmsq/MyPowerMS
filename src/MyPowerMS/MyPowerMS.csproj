@@ -510,6 +510,7 @@
     <Compile Include="Controllers\PerssionController.cs" />
     <Compile Include="Controllers\RoleinfoController.cs" />
     <Compile Include="Controllers\RoleToPerssionController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\UploadController.cs" />
     <Compile Include="Controllers\UserinfoController.cs" />
     <Compile Include="Extensions\UserAuthorizeAttribute .cs" />
@@ -559,6 +560,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Upload\Files\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

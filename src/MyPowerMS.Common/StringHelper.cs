@@ -19,5 +19,9 @@ namespace MyPowerMS.Common
         {
             return Guid.NewGuid().ToString("N");
         }
+        public string Hello()
+        {
+            return "hello";
+        }
     }
 }
