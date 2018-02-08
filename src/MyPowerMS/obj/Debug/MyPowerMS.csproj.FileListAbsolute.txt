@@ -201,3 +201,5 @@ E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\Spring.Web.Mvc5.xml
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\System.Net.Http.Formatting.xml
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\System.Web.Http.xml
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\System.Web.Http.WebHost.xml
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\log4net.dll
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS\bin\log4net.xml

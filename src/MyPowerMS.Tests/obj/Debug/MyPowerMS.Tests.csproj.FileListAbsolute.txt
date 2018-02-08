@@ -182,3 +182,5 @@ E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Common.Logging.Core.pdb
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Common.Logging.Core.xml
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Common.Logging.pdb
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\Common.Logging.xml
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\log4net.dll
+E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.Tests\bin\Debug\log4net.xml

@@ -16,10 +16,20 @@ namespace MyPowerMS.Controllers
 
         //Common.StringHelper test{get;set;}
     
-        IUserInfoBLL userService = new UserInfoBLL();        
+        IUserInfoBLL userService = new UserInfoBLL();
+        private static log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         #endregion
         // GET: Login
-        public ActionResult Index()        {
+        public ActionResult Index()
+        {
+            try
+            {
+                //DateTime m = Convert.ToDateTime("2");
+            }
+            catch(Exception ex)
+            {
+                log.Info(ex.ToString());
+            }
             
             return View();
         }
