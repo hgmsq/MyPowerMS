@@ -149,6 +149,22 @@
     <Content Include="Config\services.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.d.ts" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Content\lanse\add.html" />
     <Content Include="Content\lanse\adv.html" />
     <Content Include="Content\lanse\book.html" />
@@ -171,6 +187,26 @@
     <Content Include="Content\lanse\page.html" />
     <Content Include="Content\lanse\pass.html" />
     <Content Include="Content\lanse\tips.html" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\myWebUploader.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\ueditor\utf8-net\dialogs\anchor\anchor.html" />
     <Content Include="Content\ueditor\utf8-net\dialogs\attachment\attachment.css" />
@@ -444,6 +480,7 @@
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.js" />
     <Content Include="Content\ueditor\utf8-net\ueditor.parse.min.js" />
     <Content Include="Content\uploadphoto.js" />
+    <Content Include="Content\webuploader\myWebUploader.js" />
     <Content Include="Content\webuploader\Uploader.swf" />
     <Content Include="Content\webuploader\webuploader.css" />
     <Content Include="Content\webuploader\webuploader.custom.js" />
@@ -496,6 +533,32 @@
     <Content Include="Content\ZTree\js\jquery.ztree.exhide.js" />
     <Content Include="Content\ZTree\js\jquery.ztree.exhide.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\webuploader\myWebUploader.js" />
+    <Content Include="Scripts\webuploader\Uploader.swf" />
+    <Content Include="Scripts\webuploader\webuploader.css" />
+    <Content Include="Scripts\webuploader\webuploader.custom.js" />
+    <Content Include="Scripts\webuploader\webuploader.custom.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.fis.js" />
+    <Content Include="Scripts\webuploader\webuploader.flashonly.js" />
+    <Content Include="Scripts\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.html5only.js" />
+    <Content Include="Scripts\webuploader\webuploader.html5only.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.js" />
+    <Content Include="Scripts\webuploader\webuploader.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.noimage.js" />
+    <Content Include="Scripts\webuploader\webuploader.noimage.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.nolog.js" />
+    <Content Include="Scripts\webuploader\webuploader.nolog.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.withoutimage.js" />
+    <Content Include="Scripts\webuploader\webuploader.withoutimage.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -555,6 +618,19 @@
     <Content Include="Views\RoleToPerssion\Index.cshtml" />
     <Content Include="Content\webuploader\README.md" />
     <Content Include="Log4net.config" />
+    <Content Include="Views\Test\UploadTest.cshtml" />
+    <Content Include="Scripts\webuploader\README.md" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -566,7 +642,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Upload\Files\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Test\" />
     <Folder Include="Views\Upload\" />
   </ItemGroup>
   <ItemGroup>

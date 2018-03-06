@@ -15,5 +15,9 @@ namespace MyPowerMS.Controllers
             string str = test.Hello();
             return Content("111");
         }
+        public ActionResult UploadTest()
+        {
+            return View();
+        }
     }
 }
