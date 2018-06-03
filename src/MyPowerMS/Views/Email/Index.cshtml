@@ -13,10 +13,86 @@
     <link href="~/Content/lanse/css/pintuer.css" rel="stylesheet" />
     <script src="~/Content/lanse/js/jquery.js"></script>
     <script src="~/Content/lanse/js/pintuer.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.config.js"></script>
+    <script src="~/Content/ueditor/utf8-net/ueditor.all.min.js"></script>
 </head>
 <body>
-    <div> 
+    <div class="body-content">
+        <form class="form-x">
+            <div class="form-group">
+                <div class="label">
+                    <label>收件人：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" style="width:500px;" value="" name="recipient" id="recipient" placeholder="请输入收件人多个用:隔开"  />
+                </div>
+            </div>     
+            <div class="form-group">
+                <div class="label">
+                    <label>邮件标题：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" style="width:500px;" value="" name="mailtitle" id="mailtitle" placeholder="请输入邮件标题" />
+                </div>
+            </div>      
+            <div class="form-group">
+                <div class="label">
+                    <label>邮件标内容：</label>
+                </div>
+                <div class="field">
+                    <textarea id="emailContent" class="input w50" style="width:800px;height:300px;" name="emailContent"  placeholder="请输入邮件内容" >
 
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main " type="button" onclick="SendEmail()"> 发送邮件</button>
+                </div>
+            </div>
+        </form>
     </div>
+    <script type="text/javascript">
+        function SendEmail()
+        {
+            var recipient = $("#recipient").val();//收件人
+            var mailtitle = $("#mailtitle").val();//邮件主题
+            var emailContent = $("#emailContent").val();//邮件内容
+            if(recipient=="")
+            {
+                alert("请输入收件人");
+                return false;
+            }
+            if (mailtitle == "") {
+                alert("请输入邮件主题");
+                return false;
+            }
+            if (emailContent == "") {
+                alert("请输入邮件内容");
+                return false;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Email/SendEmail",
+                data: {
+                    recipient: recipient,
+                    mailtitle: mailtitle,
+                    emailContent: emailContent
+                },
+                success: function (data) {
+                    if (data.success) {
+                        alert(data.msg);
+                    }
+                    else {
+                        alert(data.msg);
+                    }
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>

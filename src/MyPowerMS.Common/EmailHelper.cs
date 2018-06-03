@@ -26,7 +26,7 @@ namespace MyPowerMS.Common
         /// 构造函数
         ///</summary>
         ///<param name="server">发件箱的邮件服务器地址</param>
-        ///<param name="toMail">收件人地址（可以是多个收件人，程序中是以“;"进行区分的）</param>
+        ///<param name="toMail">收件人地址（可以是多个收件人，程序中是以“,"进行区分的）</param>
         ///<param name="fromMail">发件人地址</param>
         ///<param name="subject">邮件标题</param>
         ///<param name="emailBody">邮件内容（可以以html格式进行设计）</param>
@@ -45,7 +45,7 @@ namespace MyPowerMS.Common
                 mMailMessage.Subject = subject;
                 mMailMessage.Body = emailBody;
                 mMailMessage.IsBodyHtml = true;
-                mMailMessage.BodyEncoding = System.Text.Encoding.UTF8;
+                mMailMessage.BodyEncoding = Encoding.UTF8;
                 mMailMessage.Priority = MailPriority.Normal;
                 mSenderServerHost = server;
                 mSenderUsername = username;

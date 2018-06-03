@@ -17,7 +17,7 @@ namespace MyPowerMS.Tests
             string mailUsername = "431557313@qq.com";              //登录邮箱的用户名
             string mailPassword = "rqpsgfvcubwscafj"; //对应的登录邮箱的第三方密码（你的邮箱不论是163还是qq邮箱，都需要自行开通stmp服务）
             string mailPort = "25";                      //发送邮箱的端口号
-                                                         //string attachPath = "E:\\123123.txt; E:\\haha.pdf";
+                                                         
 
             //创建发送邮箱的对象
             EmailHelper myEmail = new EmailHelper(senderServerIp, toMailAddress, fromMailAddress, subjectInfo, bodyInfo, mailUsername, mailPassword, mailPort, true, false);
