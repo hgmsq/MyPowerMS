@@ -40,3 +40,17 @@ E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\zh-Hans\EntityFramework.re
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.csprojResolveAssemblyReference.cache
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.dll
 E:\hgm\MyPowers\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.pdb
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\MyPowerMS.DAL.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\MyPowerMS.DAL.pdb
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\Dapper.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\DapperExtensions.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\MyPowerMS.Models.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\EntityFramework.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\MyPowerMS.Models.pdb
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\Dapper.xml
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\DapperExtensions.pdb
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\EntityFramework.xml
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.csprojResolveAssemblyReference.cache
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.dll
+E:\Git\2018\MyPowerMS\src\MyPowerMS.DAL\obj\Debug\MyPowerMS.DAL.pdb

@@ -52,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyPowerMS.Common\MyPowerMS.Common.csproj">
+      <Project>{8b388c2c-9876-4ce1-9010-11c4b29375ac}</Project>
+      <Name>MyPowerMS.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyPowerMS\MyPowerMS.csproj">
       <Project>{DDAA71D4-72EF-4C01-A927-82CA3920B27F}</Project>
       <Name>MyPowerMS</Name>
